@@ -1,9 +1,11 @@
 package org.example;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         Scanner scanner = new Scanner(System.in); // Wczytanie danych od użytkownika
 
         // pętla pytająca o opcje wyboru użytkownika
@@ -18,15 +20,17 @@ public class Main {
 
             // wybór użytkownika
             int choice = Integer.parseInt(scanner.nextLine());
+            ParametersManager parametersManager = new ParametersManager();
 
             switch (choice){
                 case 1 -> {
                     System.out.println("Aktualne parametry podróży: ");
-                    ParametersManager productManager = new ParametersManager();
                     parametersManager.getAllParameters().forEach(System.out::println);
                 }
                 case 2 -> {
                     System.out.println("Dodaj parametry podróży: ");
+                    String parameter = scanner.nextLine();
+                    parametersManager.addParameter(parameter);
                 }
                 case 3 -> {
                     System.out.println("Parametry podróży zostały wyzerowane.");
