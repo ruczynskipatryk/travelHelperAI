@@ -1,6 +1,8 @@
 package org.example;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Parameter;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -22,6 +24,8 @@ public class ParametersManager {
         return Files.readAllLines(parametersPath, StandardCharsets.UTF_8);
     }
 
+    // Funkcja dodająca parametry do pliku parametry.txt
+
     public void addParameter(String parameter) throws IOException {
         HashSet<String> parametry = new HashSet<>(getAllParameters());
 
@@ -32,8 +36,18 @@ public class ParametersManager {
         }
     }
 
-    public void deleteParams(String parametr) throws IOException {
+    // Funkcja usuwająca wszystkie parametry z pliku parametry.txt
 
+    public static void deleteParams(String parametry) {
+        try {
+            FileWriter fileWriter = new FileWriter(parametry);
+            fileWriter.write(""); // Nadpisanie zawartości pliku pustym ciągiem znaków
+            fileWriter.close();
+            System.out.println("Zawartość pliku " + parametry + " została usunięta.");
+        } catch (IOException e) {
+            System.err.println("Wystąpił błąd podczas usuwania zawartości pliku: " + e.getMessage());
+        }
     }
 
-};
+
+    };

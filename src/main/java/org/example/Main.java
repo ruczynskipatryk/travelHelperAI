@@ -34,6 +34,8 @@ public class Main {
                 }
                 case 3 -> {
                     System.out.println("Parametry podróży zostały wyzerowane.");
+                    
+                    parametersManager.deleteParams();
                 }
                 case 4 -> {
                     System.out.println("3 miasta polecene do odwiedzenia przez Travel Helper'a: ");}
