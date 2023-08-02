@@ -1,5 +1,7 @@
 package org.example;
 
+import com.theokanning.openai.service.OpenAiService;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Scanner;
@@ -13,8 +15,9 @@ public class Main {
             System.out.println("1. Wyświetl aktualne parametry podrózy");
             System.out.println("2. Dodaj parametry podróży (instrukcja poniżej)");
             System.out.println("3. Usuń wszystkie parametry podróży");
-            System.out.println("4. Poleć mi 3 miasta, które mogę odwiedzić.");
-            System.out.println("5. Zamknij program");
+            System.out.println("4. Podaj mi plan podróży na wybrane przeze mnie miasto.");
+            System.out.println("5. Poleć mi 3 miasta, które mogę odwiedzić.");
+            System.out.println("6. Koniec planowania na dziś - zamknij program.");
             System.out.println();
             System.out.println("Wybierz opcje: ");
 
@@ -40,8 +43,17 @@ public class Main {
                     }
                 }
                 case 4 -> {
-                    System.out.println("3 miasta polecene do odwiedzenia przez Travel Helper'a: ");}
+                    System.out.println("Oto Twój plan podróży stworzony przez Twojego Travel Helper'a: ");
+
+                    ChatGPTHelper chatGPTHelper = new ChatGPTHelper();
+                    String tripScheduleIdea = chatGPTHelper.getTripScheduleIdea(parametersManager.getAllParameters());
+
+                    System.out.println(tripScheduleIdea);
+                }
                 case 5 -> {
+                    System.out.println("3 miasta polecene do odwiedzenia przez Travel Helper'a: ");
+                }
+                case 6 -> {
                     System.out.println("Przyjemniej podróży, do zobaczenia kolejnym razem!");
                     System.exit(0);
                 }

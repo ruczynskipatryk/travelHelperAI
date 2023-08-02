@@ -13,22 +13,24 @@ public class ChatGPTHelper {
     OpenAiService service;
     public ChatGPTHelper() {
         // token ze strony OpenAI
-        OpenAiService service = new OpenAiService("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");
+        service = new OpenAiService("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");
     }
 
     public String getTripScheduleIdea(List<String> parameters) {
         String allParams = String.join(",", parameters);
-        String question = "Podam Ci parametry mojej podróży - miasto, ilośc dni i ilość pieniędzy: " + allParams + " Powiedz co mogę zobaczyć w ciągu tego czasu w danym mieście, z jakich atrakcji skorzystać za tę kwotę, ułóż plan na określoną ilość dni. ";
+        String question = "Podam Ci parametry mojej podróży - miasto, ilośc dni i ilość pieniędzy: " + allParams + " Powiedz co mogę zobaczyć w danym mieście, z jakich atrakcji skorzystać za tę kwotę - ułóż plan na określoną ilość dni. ";
 
-        // Skorzystanie z API Chat GPT - stworzenie "prośby o uzupełnienie"
+        // Skorzystanie z API Chat GPT - stworzenie "prośby o uzupełnienie, odpowiedź"
         ChatCompletionRequest completionRequest = ChatCompletionRequest.builder()
                 .messages(List.of(new ChatMessage("user", question)))
                 .model("gpt-3.5-turbo")
                 .build();
         // Poprzez service uzyskujemy odpowiedź
         List<ChatCompletionChoice> choices = service.createChatCompletion(completionRequest).getChoices();
+        // Serwis daje odpowiedź i wywołujemy getChoices dzieki czemu dostajemy liste odpowiedzi
 
         StringBuilder stringBuilder = new StringBuilder();
+
         choices.stream()
                 .map(ChatCompletionChoice::getMessage)
                 .map(ChatMessage::getContent)
