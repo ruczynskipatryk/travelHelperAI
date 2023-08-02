@@ -24,6 +24,7 @@ public class Main {
             // wybór użytkownika
             int choice = Integer.parseInt(scanner.nextLine());
             ParametersManager parametersManager = new ParametersManager();
+            ChatGPTHelper chatGPTHelper = new ChatGPTHelper();
 
             switch (choice){
                 case 1 -> {
@@ -44,14 +45,21 @@ public class Main {
                 }
                 case 4 -> {
                     System.out.println("Oto Twój plan podróży stworzony przez Twojego Travel Helper'a: ");
-
-                    ChatGPTHelper chatGPTHelper = new ChatGPTHelper();
                     String tripScheduleIdea = chatGPTHelper.getTripScheduleIdea(parametersManager.getAllParameters());
 
-                    System.out.println(tripScheduleIdea);
+                    // if na wypadek jeżeli ktoś nie podałby parametrów podróży
+                    if (tripScheduleIdea.isEmpty()){
+                        System.out.println("Podaj parametry podróży, żeby uzyskać plan swojej wymarzonej wycieczki!");
+                    }
+                    else {
+                        System.out.println(tripScheduleIdea);
+                    }
                 }
                 case 5 -> {
                     System.out.println("3 miasta polecene do odwiedzenia przez Travel Helper'a: ");
+                    String townsRecommendation = chatGPTHelper.getTownsRecommendation(parametersManager.getAllParameters());
+
+                    System.out.println(townsRecommendation);
                 }
                 case 6 -> {
                     System.out.println("Przyjemniej podróży, do zobaczenia kolejnym razem!");
