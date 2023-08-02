@@ -49,8 +49,8 @@ public class Main {
 
 
             System.out.println("Prawidłowe podanie parametrów do stworzenia planu Twojego wyjazdu wygląda następująco: ");
-            System.out.println("Nazwa Miasta, Ilość dni (maksymalnie 10), Ilość pieniędzy przeznaczona na atrakcje");
-            System.out.println("Przykład: Madryt, 3 dni, 500 zł");
+            System.out.println("Nazwa Miasta | Ilość dni (maksymalnie 10) | Ilość pieniędzy przeznaczona na atrakcje");
+            System.out.println("Przykład: Madryt 3 dni 500 zł");
         }
 
     }
