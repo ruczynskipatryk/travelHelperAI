@@ -12,7 +12,7 @@ public class Main {
 
         // pętla pytająca o opcje wyboru użytkownika
         while(true) {
-            System.out.println("1. Wyświetl aktualne parametry podrózy");
+            System.out.println("1. Wyświetl aktualne parametry podróży");
             System.out.println("2. Dodaj parametry podróży (instrukcja poniżej)");
             System.out.println("3. Usuń wszystkie parametry podróży");
             System.out.println("4. Podaj mi plan podróży na wybrane przeze mnie miasto.");
@@ -30,6 +30,7 @@ public class Main {
                 case 1 -> {
                     System.out.println("Aktualne parametry podróży: ");
                     parametersManager.getAllParameters().forEach(System.out::println);
+                    System.out.println("_____________________");
                 }
                 case 2 -> {
                     System.out.println("Dodaj parametry podróży: ");
