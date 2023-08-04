@@ -1,5 +1,7 @@
 🗺️ Application - travelHelperAI
 
+<h1>Project Overview 🎨</h1>
+
 The application creates a multi-day travel plan after adding basic travel parameters such as city, number of days, and budget.
 
 App is connected to OpenAI API, 3.5-turbo model ChatGPT.
