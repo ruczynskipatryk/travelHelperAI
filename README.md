@@ -11,7 +11,7 @@ App is connected to OpenAI API, 3.5-turbo model ChatGPT.
 <br>
 - API from OpenAI
 
-<h1>Main functionalities 🎮 </h1>
+<h1>Main functionalities 🕹️ </h1>
 - You can add your own parammeters of Travel like City, price You want to spend and how much days you will be in specific town.
 <br>
 - Passing the text to the API and receiving a comprehensive response in the form of a daily schedule.
