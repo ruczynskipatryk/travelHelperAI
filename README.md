@@ -1,10 +1,16 @@
-🗺️ Aplikacja travelHelperAI
+🗺️ Application - travelHelperAI
 
-Aplikacja tworzy kilkudniowy plan wycieczki, po dodaniu podstawowych parametrów podróży takich jak - miasto, ilość dni oraz budżet.
+The application creates a multi-day travel plan after adding basic travel parameters such as city, number of days, and budget.
 
-Aplikacja jest połączona z API od OpenAI, z modlem 3.5-turbo ChataGPT.
+App is connected to OpenAI API, 3.5-turbo model ChatGPT.
 
-Główne funkcjonalności:
-- Przekazanie tekstu do API i otrzymanie obszernej odpowiedzi.
+<h1>Tech/framework used 🧰</h1>
+- Java
+- API from OpenAI
+
+<h1>Main functionality</h1>
+- You can add your own parammeters of Travel like City, price You want to spend and how much days you will be in specific town.
+- Passing the text to the API and receiving a comprehensive response in the form of a daily schedule.
+
 
 
