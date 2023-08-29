@@ -10,6 +10,8 @@ App is connected to OpenAI API, 3.5-turbo model ChatGPT.
 - Java
 <br>
 - API from OpenAI
+<br>
+- Git
 
 <h1>Main functionalities 🕹️ </h1>
 - You can add your own parammeters of Travel like City, price You want to spend and how much days you will be in specific town.
